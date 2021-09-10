@@ -1,18 +1,19 @@
-1.  a = [1,2,3,4]
-    print(a[::-1])
+1.  
+a = [1,2,3,4]
+print(a[::-1])
 
 
+    
+    
 /////////////////
 2.
-
-
-
-def reverse(a,start,end):
-  while(start<end):
-    a[start],a[end]=a[end],a[start]
-    reverse(a,start+1,end-1)
+def rev(a,start,end):
+    if start>=end:
+        return
+    a[start],a[end] = a[end],a[start]
+    rev(a,start+1,end-1)
     
-a = [1,2,3,4]
-reverse(a,0,len(a)-1)
+a=[1,2]
+rev(a,0,1)
 print(a)
     
