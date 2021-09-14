@@ -6,4 +6,5 @@ def sun(a,n):
 
         if sum==0 or sum in s:
             return True
+        s.append(sum)
     return False
