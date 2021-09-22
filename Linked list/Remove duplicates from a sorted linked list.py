@@ -3,7 +3,7 @@ class Node:
     def __init__(self,data):
         self.data = data
         self.next = None
-
+##main function to remove duplicates##
 def remove(head):
     if(head == None and head.next==None):
         return
