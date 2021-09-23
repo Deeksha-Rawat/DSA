@@ -5,7 +5,7 @@ def removeduplicates(self,head):
   hash=set()
   hash.add(head.data)
   current =head
-  while(current):
+  while(current.next):
     if current.next.data in hash:
       current.next=current.next.next
     else:
