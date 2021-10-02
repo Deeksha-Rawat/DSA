@@ -1,0 +1,43 @@
+class Node:
+    def __init__(self, data, left=None, right=None):
+        self.data = data
+        self.left = left
+        self.right = right
+ 
+def inorder(root):
+     
+    if root is None:
+        return
+ 
+    inorder(root.left)
+    print(root.data, end=' ')
+    inorder(root.right)
+ 
+ 
+def importtoset(root,set):
+    if root is None:
+        return
+    importtoset(root.left,set)
+    set.add(root.data)
+    importtoset(root.right,set)
+
+def settobst(root,i):
+    if root is None:
+        return
+    settobst(root.left,i)
+    root.data = next(i)
+    settobst(root.right,i)            
+
+root = Node(8)
+root.left = Node(3)
+root.right = Node(5)
+root.left.left = Node(10)
+root.left.right = Node(2)
+root.right.left = Node(4)
+root.right.right = Node(6)
+s=set()
+importtoset(root,s)
+i = iter(s)
+settobst(root,i)
+inorder(root)   
+    
