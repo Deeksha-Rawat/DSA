@@ -41,3 +41,54 @@ i = iter(s)
 settobst(root,i)
 inorder(root)   
     
+
+
+
+
+
+################################
+class Node:
+    def __init__(self, data, left=None, right=None):
+        self.data = data
+        self.left = left
+        self.right = right
+ 
+def inorder(root):
+     
+    if root is None:
+        return
+ 
+    inorder(root.left)
+    print(root.data, end=' ')
+    inorder(root.right)
+#store in inorder  
+def storenodes(root,arr):
+    if root is None:
+        return
+    storenodes(root.left,arr)
+    arr.append(root.data)
+    storenodes(root.right,arr)
+
+#to construct binary tree
+def binarytree(arr):
+    while(root):
+        mid = len(n)//2
+        root = arr[mid]
+        root.left = binarytree(arr[:mid])
+        root.right = binarytree(arr[mid+1:])
+    return root
+
+    
+
+
+
+root = Node(8)
+root.left = Node(3)
+root.right = Node(5)
+root.left.left = Node(10)
+root.left.right = Node(2)
+root.right.left = Node(4)
+root.right.right = Node(6)
+
+inorder(root)   
+    
